@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "401021704374",
+    "project_id": "app-gastos-48fca",
+    "storage_bucket": "app-gastos-48fca.firebasestorage.app"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:401021704374:android:1b0d8c543a2f047f952e17",
+        "android_client_info": {
+          "package_name": "com.example.app_de_gastos"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBqfLh7IQ2yXF81_0AJ_8cXvwRRcG6ediY"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

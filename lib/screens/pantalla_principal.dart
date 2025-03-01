@@ -1,3 +1,5 @@
+import 'package:app_de_gastos/repositories/auth_repository.dart';
+import 'package:app_de_gastos/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 
 class PantallaPrincipal extends StatefulWidget {
@@ -8,11 +10,30 @@ class PantallaPrincipal extends StatefulWidget {
 }
 
 class _PantallaPrincipalState extends State<PantallaPrincipal> {
+  final authRepo = AuthRepository();
+  var _indiceActual = 0;
+  final _tabs = <Widget>[
+    Text('tabs 1'),
+    Text('tabs 2'),
+  ];
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       body: Center(
-        child: Text('Pantalla Principal'),
+        child: _tabs[_indiceActual],
+      ),
+      bottomNavigationBar: BottomNavigationBar(
+        currentIndex: _indiceActual,
+        onTap: (value) {
+          setState(() {
+            _indiceActual = value;
+          });
+        },
+        items: [
+          BottomNavigationBarItem(icon: Icon(Icons.money), label: 'Gastos'),
+          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'Perfil'),
+        ],
       ),
     );
   }

@@ -1,4 +1,5 @@
 import 'package:app_de_gastos/repositories/auth_repository.dart';
+import 'package:app_de_gastos/screens/splash_screen.dart';
 import 'package:flutter/material.dart';
 
 class PantallaRegistro extends StatefulWidget {
@@ -66,9 +67,22 @@ class _PantallaRegistroState extends State<PantallaRegistro> {
                       ),
                     );
 
-                    Navigator.pop(context);
+                    Navigator.pushAndRemoveUntil(context,
+                        MaterialPageRoute(builder: (_) {
+                      return SplashScreen();
+                    }), (route) {
+                      return route.isFirst;
+                    });
                   }
-                } catch (e) {}
+                } catch (e) {
+                  if (context.mounted) {
+                    ScaffoldMessenger.of(context).showSnackBar(
+                      SnackBar(
+                        content: Text('No se pudo crear usuario'),
+                      ),
+                    );
+                  }
+                }
               },
               child: Text('Registrarse'),
             ),
